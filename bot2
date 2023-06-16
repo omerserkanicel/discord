@@ -34,7 +34,20 @@ def gen_pass(pass_length):
 
     return password
 
- 
+def gen_pass2(pass_length):
+
+    elements = ("yazi","tura")
+
+    password = ""
+    
+    for i in range(pass_length):
+
+        password += random.choice(elements)
+
+
+
+    return password
+
 
  
 
@@ -59,6 +72,12 @@ async def on_message(message):
         sifre = gen_pass(10)
 
         await message.channel.send(sifre)
+    
+    elif message.content.startswith('yazimi turami'):
+
+        sifre2 = gen_pass2(1)
+
+        await message.channel.send(sifre2)
     
     elif message.content.startswith('naber'):
 
@@ -109,3 +128,5 @@ async def on_message(message):
         web.open("https://www.youtube.com/")
     elif message.content.startswith('roblox u aç'):
         web.open("https://www.roblox.com/home")
+client.run("MTExODIzMjAzMDc1MzM0MTUyMQ.GueUdl.j9IxQJ38Zys0mMiQP0TLpp8qvl7cIGcBd7QKl4")
+
