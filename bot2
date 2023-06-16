@@ -128,5 +128,5 @@ async def on_message(message):
         web.open("https://www.youtube.com/")
     elif message.content.startswith('roblox u aç'):
         web.open("https://www.roblox.com/home")
-client.run("MTExODIzMjAzMDc1MzM0MTUyMQ.GueUdl.j9IxQJ38Zys0mMiQP0TLpp8qvl7cIGcBd7QKl4")
+
 
