@@ -1,4 +1,138 @@
+import discord
+import os
+import random
+import webbrowser as web
 
+
+# ayricaliklar (intents) değişkeni botun ayrıcalıklarını depolayacak
+
+intents = discord.Intents.default()
+
+# Mesajları okuma ayrıcalığını etkinleştirelim
+
+intents.message_content = True
+
+# istemci (client) değişkeniyle bir bot oluşturalım ve ayrıcalıkları ona aktaralım
+
+client = discord.Client(intents=intents)
+
+def emoji_olusturucu():
+    emoji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923","\U0001F601","\U0001F643"]
+    return random.choice(emoji)
+
+def gen_pass(pass_length):
+
+    elements = "+-/*!&$#?=@<>"
+
+    password = ""
+
+ 
+
+    for i in range(pass_length):
+
+        password += random.choice(elements)
+
+ 
+
+    return password
+
+def gen_pass2(pass_length):
+
+    elements = ("yazı","tura","dik")
+
+    password = ""
+    
+    for i in range(pass_length):
+
+        password += random.choice(elements)
+
+
+
+    return password
+
+
+ 
+
+@client.event
+
+async def on_ready():
+
+    print("Hi boyle girdim Hacker Yardımcısı")
+{client.user}
+
+ 
+
+@client.event
+
+async def on_message(message):
+
+    if message.author == client.user:
+
+        return
+
+    elif message.content.startswith('şifre oluştur'):
+
+        sifre = gen_pass(10)
+
+        await message.channel.send(sifre)
+    
+    elif message.content.startswith('yazımı turamı'):
+
+        sifre2 = gen_pass2(1)
+
+        await message.channel.send(sifre2)
+    
+    elif message.content.startswith('naber'):
+
+        await message.channel.send("ben iyiyim teşekkür ederim ")
+    
+    elif message.content.startswith('canım çok sıkılıyor'):
+
+        await message.channel.send("eğer canın sıkılıyorsa kitap okuma,oyun oynama,dışarıya çıkma,televizyon izleme gibi aktiveteler yapabilirsin")
+    
+    elif message.content.startswith('türkiye hakkında ne düşünüyorsun'):
+
+        await message.channel.send("türkiye bence harika bir ülke sadece bazı kaynakları yeterli değil")
+    
+    elif message.content.startswith('sen seçimde kime oy verdin'):
+
+        await message.channel.send("tabi ki de.... REİSSSSSE yani RECEP TAYYİP ERDOĞAN!!!!!")
+    elif message.content.startswith('şaka yaparmısın'):
+
+        await message.channel.send("büyük su küçük suya ne demiş? sucuk :D :D :)")
+    elif message.content.startswith('beni seviyormusun'):
+
+        await message.channel.send("tabi ki de seni çok seviyorum <3")
+    
+    elif message.content.startswith('Ronaldomu yoksa Messi mi'):
+
+        await message.channel.send("Bence Ronaldo Messi ne kadar dünya kupası alırsa alsın eski efsane Ronaldodur")
+    elif message.content.startswith('görüşürüz'):
+
+        await message.channel.send("Bay bay")
+    elif message.content.startswith('küresel ısıyı engellemek için neler yapılabilir'):
+
+        await message.channel.send("Fabrikaların ucuna filtreler ve elektrikli arabalar vb. kullanılması gerekir")
+    elif message.content.startswith('türkiyenin en iyi internetiyle en kötü internetini gösterebilirmisin'):
+
+        await message.channel.send("en iyi internet superonline en kötü internet vodafondur günlük internet gitme sayısı superonline:0 vodafone: 32")
+    elif message.content.startswith('ekonomi hakkında ne düşünüyorsun'):
+
+        await message.channel.send("Biraz fazla artıyor")
+    
+    elif message.content.startswith('chrome u aç'):
+        await message.channel.send("tamamdır google chrome u açmak üzereyim işlemleri yapıyorum...... bitti! ")
+        os.startfile("chrome.exe")
+    elif message.content.startswith('kodland i aç'):
+        await message.channel.send("tamamdır kodland i açmak üzereyim işlemleri yapıyorum...... bitti! ")
+        web.open("https://platform.kodland.org/tr/courses/")
+    elif message.content.startswith('youtube yi aç'):
+        await message.channel.send("tamamdır youtube yi açmak üzereyim işlemleri yapıyorum...... bitti! ")
+        web.open("https://www.youtube.com/")
+    elif message.content.startswith('roblox u aç'):
+        web.open("https://www.roblox.com/home")
+    elif message.content.startswith('gülümse'):
+        await message.channel.send(emoji_olusturucu())
 import discord
 import os
 import random
