@@ -38,7 +38,7 @@ def gen_pass(pass_length):
 
 def gen_pass2(pass_length):
 
-    elements = ("yazı","tura","dik")
+    elements = ("yazı","tura","dik \U0001F601")
 
     password = ""
     
@@ -133,3 +133,4 @@ async def on_message(message):
         web.open("https://www.roblox.com/home")
     elif message.content.startswith('gülümse'):
         await message.channel.send(emoji_olusturucu())
+
