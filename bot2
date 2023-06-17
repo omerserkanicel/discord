@@ -1,3 +1,4 @@
+
 import discord
 import os
 import random
@@ -16,7 +17,9 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
- 
+def emoji_olusturucu():
+    emoji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923","\U0001F601","\U0001F643"]
+    return random.choice(emoji)
 
 def gen_pass(pass_length):
 
@@ -36,7 +39,7 @@ def gen_pass(pass_length):
 
 def gen_pass2(pass_length):
 
-    elements = ("yazi","tura")
+    elements = ("yazı","tura","dik")
 
     password = ""
     
@@ -55,7 +58,8 @@ def gen_pass2(pass_length):
 
 async def on_ready():
 
-    print(f'Hi boyle girdim {client.user}')
+    print("Hi boyle girdim Hacker Yardımcısı")
+{client.user}
 
  
 
@@ -67,13 +71,13 @@ async def on_message(message):
 
         return
 
-    elif message.content.startswith('sifre_olustur'):
+    elif message.content.startswith('şifre oluştur'):
 
         sifre = gen_pass(10)
 
         await message.channel.send(sifre)
     
-    elif message.content.startswith('yazimi turami'):
+    elif message.content.startswith('yazımı turamı'):
 
         sifre2 = gen_pass2(1)
 
@@ -128,5 +132,6 @@ async def on_message(message):
         web.open("https://www.youtube.com/")
     elif message.content.startswith('roblox u aç'):
         web.open("https://www.roblox.com/home")
-
-
+    elif message.content.startswith('gülümse'):
+        await message.channel.send(emoji_olusturucu())
+    
