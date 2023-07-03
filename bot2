@@ -1,7 +1,9 @@
 import discord
+from discord.ext import commands
 import os
 import random
 import webbrowser as web
+import vlc
 
 
 # ayricaliklar (intents) değişkeni botun ayrıcalıklarını depolayacak
@@ -133,4 +135,6 @@ async def on_message(message):
         web.open("https://www.roblox.com/home")
     elif message.content.startswith('gülümse'):
         await message.channel.send(emoji_olusturucu())
+    elif message.content.startswith('müzik_aç'):
+        web.open("https://www.youtube.com/watch?v=kRoBddnG6NQ")
 
